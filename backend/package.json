@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/GoldWomenAcademy/Application_Node_Express_MongoDB/issues"
   },
-  "homepage": "https://github.com/GoldWomenAcademy/Application_Node_Express_MongoDB#readme"
+  "homepage": "https://github.com/GoldWomenAcademy/Application_Node_Express_MongoDB#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
