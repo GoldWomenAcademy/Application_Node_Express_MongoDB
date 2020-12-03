@@ -9,6 +9,10 @@ app.use((req, res, next) => {
     next();
   });
 
+  app.post("/app/stuff", (req, res, next) => {
+      
+  })
+
 app.use('/api/stuff', (req, res, next) => {
     const stuff = [
       {
