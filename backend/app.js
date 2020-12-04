@@ -1,5 +1,12 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://test:YrDqT9OEswkU74ov@cluster0-jminb.mongodb.net/test?retryWrites=true&w=majority',
+  { useNewUrlParser: true,
+    useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
  
 const app = express();
 
@@ -12,8 +19,11 @@ app.use((req, res, next) => {
 
   app.use(bodyParser.json());
 
-  app.post("/app/stuff", (req, res, next) => {
-      console.log(req.body);
+  app.post('/api/stuff', (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: 'Objet créé !'
+    });
   });
 
 app.use('/api/stuff', (req, res, next) => {
